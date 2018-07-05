@@ -1,0 +1,3 @@
+[submodule "hexo-theme-inside"]
+	path = hexo-theme-inside
+	url = git@github.com:SomiFrame/hexo-theme-inside.git
