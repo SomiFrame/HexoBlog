@@ -81,3 +81,5 @@ deploy:
   type: git
   repository: git@github.com:SomiFrame/SomiFrame.github.io.git
   branch: master
+
+disqus_shortname: FrontEndSomi3617
