@@ -1,7 +1,7 @@
 ---
-title: [翻译]12个非常有用的javascript写法
+title: 12个非常有用的javascript写法
 date: 2018-07-06 15:38:11
-tags: 
+tag: 
 - javascript
 - js
 - hack
