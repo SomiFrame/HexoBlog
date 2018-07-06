@@ -1,12 +1,12 @@
 ---
-title: markdown使用体验
+title: Markdown学习
 date: 2018-07-05 11:38:38
 tag: 
 - markdown
-- typora
 categories: 
 - 笔记
 - 备忘
+- 学习
 ---
 
 #  Markdown是什么?
