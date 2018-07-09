@@ -115,4 +115,59 @@ console.log(array.slice(-1)); // [6]
 console.log(array.slice(-2)); // [5,6]  
 console.log(array.slice(-3)); // [4,5,6]  
 ```
-# 未完待续............
+
+# 数组截断
+这个写法很有趣,通过设置数组的长度来截取某一部分的内容.例如你现在有一个含有10个元素的数组,但是你只想要前五个元素,那么你可以通过设置该数组的长度为5`array.length=5`来截取前五个元素.请看下面的例子:
+```javascript
+var array = [1,2,3,4,5,6]
+console.log(array.lenght) //6
+array.length = 3
+console.log(array.length) // 3
+console.log(array) // [1,2,3]
+```
+
+# 替换所有匹配的内容 
+`String.replace`方法允许我们通过使用String和Regex(正则表达式)来替换字符串,原本这个方法只能替换第一个匹配的字符串.但是你可以模拟`replaceAll()`方法通过添加`/g`到正则表达式的后面:
+```javascript
+var string = "john john"
+console.log(string.replace(/hn/,"ana")) // "joana john"
+console.log(string.replace(/hn/g,"ana")) // "joana joana"
+```
+
+# 合并数组
+如果你需要合并两个数组,你可以使用`Array.concat()`方法:
+```javascript
+var array1 = [1,2,3]
+var array2 = [4,5,6]
+console.log(array1.concat(array2)) // [1,2,3,4,5,6]
+```
+然而,这并不是最适合去合并两个数组的方式,因为这样合并会消耗内存来创建一个新的数组.在这种情况,你可以通过使用`Array.push.apply(arr1,arr2)`来代替.它会把第二的数组合并到一个当中从而减少内存的使用:
+```javascript
+var array1 = [1,2,3]
+var array2 = [4,5,6]
+console.log(array1.push.apply(array1,array2))//[1,2,3,4,5,6]
+```
+
+# 把dom列表转换为数组
+如果你运行`document.querySelectorAll("p")`的时候,它将会返回一个包含dom元素的数组(如果有p元素的话),这就是dom列表.但是这个对象是没有数组的所有方法,如:`sort()`,`reduce()`,`map()`,`filter()`.为了让这个对象能使用数组的那些方法你需要把它转化为数组.要实现这个只需要使用`[].slice.call(elements)`:
+```javascript
+var element = document.querySelectorAll("p") //NodeList
+var arrayElement = [].slice.call(elements) // Now the NodeList is an array
+var arrayElements = Array.from(elements); // This is another way of converting NodeList to Array  
+```
+# 数组元素随机排序
+我们可以需要使用任何三方库如(Lodash)就可以实现对数组内容的随机排序,只需要运行一下代码:
+```javascript
+var list = [1,2,3]
+console.log(list.sort(function(){
+    return Math.random() - 0.5
+}))
+```
+上面为什么可以这样实现呢?原因如下:
+> sort是根据后面的参数的正负来排序，我们取个随机数0~1，这个以0.5为分界线
+
+# 总结
+这里我就不写原作的总结了,我谈谈我看完之后的想法吧.第一这些写法有部分我都在项目中使用过,的确能很好的发挥作用而且让你的代码更简洁.
+> 总之多学吧 O(∩_∩)O哈哈哈~
+>> 如果发现有什么翻译的不对或则什么其他的问题可以留下评论哦
+
