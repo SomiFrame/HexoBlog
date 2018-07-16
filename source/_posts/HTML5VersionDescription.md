@@ -231,6 +231,7 @@ audio和video是html5的新标签,audio是影评播放器video是视频播放器
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 {%endraw%}
 
+
 # html5 dom selector
 html5新增一个新的选择器;
 
@@ -239,7 +240,29 @@ html5新增一个新的选择器;
 
 能返回被选择的dom元素数组.
 
+
 # html5 element.classList
+
 html5的一个新特性就是在element里面的属性classList
-它包含有六个方法: `classList.add()`,`classList.remove()`,`classList.item()`,`classList.toggle()`,`classList.contains()`,`classList.replace()`.
+它包含有六个方法:
+
+ `classList.add()`,`classList.remove()`,`classList.item()`,`classList.toggle()`,`classList.contains()`,`classList.replace()`.
+
+
+# html5 element.dataset
+
+`element.dataset`是html5对元素新增的一个自定义属性的特性:
+
+当需要往元素节点添加一些自定义数据的时候可以通过添加以`data-`为前缀的自定义数据,例如:
+
+```html
+<div data-name="somi" data-age="18" id="testdom">testdom</div>
+<script>
+    console.log(document.getElementById('testdom').dataset.age) //18
+    console.log(document.getElementById('testdom').dataset.somi) //somi
+</script>
+```
+# html5 filereader
+
+
 
