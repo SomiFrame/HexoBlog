@@ -262,7 +262,21 @@ html5的一个新特性就是在element里面的属性classList
     console.log(document.getElementById('testdom').dataset.somi) //somi
 </script>
 ```
-# html5 filereader
 
 
+# html5 FileReader
+
+`FileReader`允许网页程序异步读取本地文件内容.
+
+{%raw%}
+<p data-height="265" data-theme-id="0" data-slug-hash="MByGeK" data-default-tab="js,result" data-user="somiframe" data-embed-version="2" data-pen-title="html5 filereader" class="codepen">See the Pen <a href="https://codepen.io/somiframe/pen/MByGeK/">html5 filereader</a> by somi (<a href="https://codepen.io/somiframe">@somiframe</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{%endraw%}
+
+# html5 network state
+
+{%raw%}
+<p data-height="265" data-theme-id="0" data-slug-hash="bjpjMx" data-default-tab="js,result" data-user="somiframe" data-embed-version="2" data-pen-title="html5 network state" class="codepen">See the Pen <a href="https://codepen.io/somiframe/pen/bjpjMx/">html5 network state</a> by somi (<a href="https://codepen.io/somiframe">@somiframe</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{%endraw%}
 
