@@ -5,6 +5,7 @@ tag:
 - javascript
 - object-oriented
 - IIFE
+- 开课吧
 ---
 
 # 面向对象概念
@@ -33,7 +34,7 @@ javascript的对象创建可一通过Object构造函数或者对象字面量的�
     }
     Person.sayHello() // 'hello everybody,my name is:somi'
 ```
-j
+
 > 构造函数创建
 ```javascript
     function Person(){
@@ -47,12 +48,56 @@ j
     var person = new Person()
     person.sayHello()
 ```
-> PS: 其实创建对象的方法不止这两种,例如还有 1. 工厂模式 2. 构造函数模式 3. 原型模式 4. 组合使用构造函数模式和原型模式 5. 动态原型模式 6. 寄生构造函数模式 7. 稳妥构造函数模式. 详细请见:
+> PS: 其实创建对象的方法不止这两种,例如还有 1. 工厂模式 2. 构造函数模式 3. 原型模式 4. 组合使用构造函数模式和原型模式 5. 动态原型模式 6. 寄生构造函数模式 7. 稳妥构造函数模式. 详细请见:[JavaScript创建对象的七种方式](https://xxxgitone.github.io/2017/06/10/JavaScript%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%83%E7%A7%8D%E6%96%B9%E5%BC%8F/)
+
+不难看出这几个模式都是基于上面的两个基础方法的一个扩展.
 
 
 # JavaScript的继承
 创建一个或多个类的专门版本类方式称为继承（Javascript只支持单继承）。
+下面介绍几种js的继承方法:
+比如,现在有一个"人"对象的构造函数:
+```javascript
+    function Person() {
+        this.species = "human"
+    }
+```
+还有一个"男人"的构造函数: 
+```javascript
+    function Teacher(name,sex) {
+        this.name = name
+        this.sex = sex
+    }
+```
+怎么样才能让"老师"继承"人"呢
+## 构造函数继承
+```javascript
+    function Teacher (name,sex) {
+        Person.apply(this,arguments);
+        this.name = name
+        this.sex = sex
+    }
+    var teacher = new Teacher("somi","male")
+    console.log(teacher.species) // "human"
+```
 ## 原型继承
+```javascript
+    Teacher.prototype = new Person()
+    Teacher.prototype.constructor = Teacher
+    var teacher = new Teacher("somi","male")
+    console.log(teacher.species) //"human"
+```
 ## 类式继承
 ## 组合继承
 ## extend方法
+```javascript
+    function extend(Child,Parent) {
+        var F = function(){}
+        F.prototype = Parent.prototype
+        Child.prototype = new F()
+        Child.prototype.constructor = Child
+    }
+    extend(Teacher,Person)
+    var teacher = new Teacher('somi','male')
+    console.log(teacher.species) // "human"
+```
