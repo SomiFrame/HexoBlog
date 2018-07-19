@@ -62,7 +62,7 @@ javascript的对象创建可一通过Object构造函数或者对象字面量的�
         this.species = "human"
     }
 ```
-还有一个"男人"的构造函数: 
+还有一个"老师"的构造函数: 
 ```javascript
     function Teacher(name,sex) {
         this.name = name
@@ -87,7 +87,6 @@ javascript的对象创建可一通过Object构造函数或者对象字面量的�
     var teacher = new Teacher("somi","male")
     console.log(teacher.species) //"human"
 ```
-## 类式继承
 ## 组合继承
 ## extend方法
 ```javascript
