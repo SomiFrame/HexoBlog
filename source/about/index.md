@@ -76,7 +76,7 @@ date: 2018-07-18 15:18:43
 使用 Js 高阶函数封装，可复用模块，如局部加载动画特效等
 使用 axios 网络拦截，统一处理服务器响应
 
-## 开源项目 [somi-dashjs](https://www.npmjs.com/package/somi-dashjs)
+## 开源项目 [https://www.npmjs.com/package/somi-dashjs](https://www.npmjs.com/package/somi-dashjs)
 
 > 项目描述
 * 让浏览器支持dash流媒体协议的开源库
