@@ -87,7 +87,6 @@ javascript的对象创建可一通过Object构造函数或者对象字面量的�
     var teacher = new Teacher("somi","male")
     console.log(teacher.species) //"human"
 ```
-## 组合继承
 ## extend方法
 ```javascript
     function extend(Child,Parent) {
@@ -100,3 +99,41 @@ javascript的对象创建可一通过Object构造函数或者对象字面量的�
     var teacher = new Teacher('somi','male')
     console.log(teacher.species) // "human"
 ```
+
+# 作用域
+> 在js中，变量的作用域是有定义变量的位置决定的而不是变量被使用的位置;函数可以限定作用域.
+
+```javascript
+    var a = 10 
+    function fn() {
+        console.log(a)
+        console.log(b)
+    }
+    var b = 20
+    fn() // 10  20
+```
+
+## js函数执行过程
+
+1. 浏览器会先预先编译js代码,把变量声明前置,创建变量对象(VA)
+    1. 开始语法分析将字符流(char stream)转换为记号流(token stream).
+    如:
+
+    ```javascript
+        var result = testNum1 - testNum2
+    ```
+
+    语法分析后:
+
+    ```
+        NAME "result"
+        EQUALS
+        NAME "testNum1"
+        MINUS
+        NAME "testNum2"
+        SEMICOLON
+    ```
+
+    2. 语法分析后得到语法树,
+    3. 开始预编译(当js引擎解析脚本时,它会在预编译期间对所有的声明变量和函数进行处理!并且是先声明变量,再预定义函数)
+2. 当遇到开始调用函数的时候会创建该函数的活动对象(OA)
